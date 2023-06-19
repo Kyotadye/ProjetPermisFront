@@ -1,0 +1,17 @@
+<h1>Données de l'API</h1>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom d'utilisateur</th>
+      <th>Rôle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data">
+      <td>{{ item.id }}</td>
+      <td>{{ item.nomUtil }}</td>
+      <td>{{ item.role }}</td>
+    </tr>
+  </tbody>
+</table>
