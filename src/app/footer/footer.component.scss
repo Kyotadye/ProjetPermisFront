@@ -1,0 +1,20 @@
+footer {
+  background-color: var(--fourth-color);
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 1rem;
+}
+
+.names {
+  display: flex;
+  justify-content: flex-end; /* Alignement à gauche */
+  color: var(--secondary-color);
+  margin: 0; /* Ajout de cette ligne pour supprimer le margin par défaut */
+  padding: 0; /* Ajout de cette ligne pour supprimer le padding par défaut */
+}
+
+.names p {
+  margin: 0;
+}
