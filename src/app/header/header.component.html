@@ -1,0 +1,37 @@
+<p>
+  <mat-toolbar class="mat-toolbar-custom">
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+      (click)="navigateTo('')"
+    >
+      <mat-icon>home</mat-icon>
+    </button>
+    <span class="example-spacer"></span>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+      (click)="navigateTo('all-users')"
+    >
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+      (click)="navigateTo('all-actions')"
+    >
+      <mat-icon>flight_takeoff</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+    >
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+  <app-carousel></app-carousel>
+</p>

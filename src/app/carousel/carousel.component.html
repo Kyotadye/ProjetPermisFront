@@ -1,0 +1,15 @@
+<div class="carousel">
+  <img
+    class="carousel-image"
+    [src]="images[currentIndex].src"
+    alt="Slide Image"
+  />
+  <div class="caption">
+    {{ images[currentIndex].caption }}
+  </div>
+  <div class="overlay"></div>
+  <div class="navigation">
+    <button class="previous-button" (click)="showPreviousImage()">&lt;</button>
+    <button class="next-button" (click)="showNextImage()">&gt;</button>
+  </div>
+</div>

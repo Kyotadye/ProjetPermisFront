@@ -13,4 +13,10 @@ export class ApiService {
   public getAllUsers(): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/utilisateur/listerUtilisateur`);
   }
+
+  public getAllActions(): Observable<any> {
+    return this.http.get<any>(
+      `${this.baseUrl}/actionMission/listerActionMission`
+    );
+  }
 }

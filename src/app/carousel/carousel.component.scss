@@ -1,0 +1,71 @@
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 400px; /* Ajustez la hauteur selon vos besoins */
+  overflow: hidden;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--secondary-color);
+  font-size: 60px; /* Ajustez la taille du texte selon vos préférences */
+  z-index: 2;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Couleur de fond semi-transparente */
+  filter: blur(5px); /* Ajoute un flou à la div overlay */
+  z-index: 1;
+}
+
+.navigation {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  right: 10px;
+  z-index: 3;
+}
+
+.previous-button,
+.next-button {
+  background: transparent;
+  border: none;
+  color: var(--secondary-color);
+  font-size: 50px;
+  padding: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.previous-button:hover,
+.next-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.previous-button {
+  float: left;
+}
+
+.next-button {
+  float: right;
+}
