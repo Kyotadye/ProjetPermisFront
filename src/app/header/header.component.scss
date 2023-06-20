@@ -6,3 +6,7 @@
   background-color: var(--fourth-color);
   color: var(--secondary-color);
 }
+
+.mat-mdc-icon-button:hover {
+  background-color: var(--primary-color);
+}
