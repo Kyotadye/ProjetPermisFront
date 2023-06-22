@@ -86,11 +86,16 @@ tr:not(:last-child) {
 }
 
 .button1 {
-  font-size: 16px;
+  font-size: 14px;
   transition-duration: 0.4s;
   padding: 16px;
   border-radius: 8px;
   background-color: var(--fourth-color);
   color: var(--secondary-color);
   border: 2px solid var(--secondary-color); /* Green */
+}
+
+.line {
+  border-top: 3px solid var(--secondary-color);
+  margin-top: 15px;
 }

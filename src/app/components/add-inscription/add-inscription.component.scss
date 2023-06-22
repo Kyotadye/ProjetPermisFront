@@ -1,0 +1,29 @@
+.container-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 5px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: minmax(150px, max-content) 1fr;
+  gap: 10px;
+  align-items: center;
+  justify-content: left;
+  width: 30%;
+  padding: 10px;
+}
+
+label {
+  min-width: 150px; /* Ajustez la largeur selon vos besoins */
+}
+
+.form {
+  width: 300px; /* Ajustez la largeur selon vos besoins */
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}

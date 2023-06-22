@@ -24,6 +24,20 @@
           </ng-container>
         </table>
       </div>
+      <div class="container-center line" style="padding: 10px">
+        <div class="container">
+          <h2>Ajouter une action</h2>
+        </div>
+        <select
+          [(ngModel)]="selectedId"
+          name="selectedItem"
+          class="custom-input"
+        >
+          <option *ngFor="let item of actionsglobal" [value]="item.id">
+            {{ item.wording }}
+          </option>
+        </select>
+      </div>
     </ng-container>
   </ng-container>
 

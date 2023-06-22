@@ -1,0 +1,37 @@
+<div class="table-container">
+  <h1>Tableau des inscriptions</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Nom de la mission</th>
+        <th>Date de l'inscritpion</th>
+        <th>
+          <button
+            mat-icon-button
+            class="example-icon"
+            aria-label="Example icon-button with menu icon"
+            (click)="add()"
+          >
+            <mat-icon>add</mat-icon>
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of inscriptions">
+        <td>{{ item.fkMissionWording }}</td>
+        <td>{{ item.date }}</td>
+        <td>
+          <button
+            mat-icon-button
+            class="example-icon"
+            aria-label="Example icon-button with menu icon"
+            (click)="delete(item.id)"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -11,6 +11,8 @@ export class ModifyMissionComponent {
   id: number | any;
   data: any;
   actions: any;
+  actionsglobal: any;
+  selectedId!: number; // Variable pour stocker l'ID sélectionné lors de la soumission
 
   constructor(
     private route: ActivatedRoute,
@@ -27,12 +29,29 @@ export class ModifyMissionComponent {
       });
     });
     this.getActionByMissionId();
+    this.getActionGlobal();
+  }
+
+  getActionGlobal(): void {
+    this.apiservice.getAllActions().subscribe((datas) => {
+      console.log(datas);
+      this.actionsglobal = datas; // Faites quelque chose avec les données
+    });
   }
 
   modify(): void {
-    this.apiservice
-      .modifyMission(this.id, this.data)
-      .subscribe((datas) => this.refresh());
+    this.apiservice.ajoutActionAMission(this.id, this.selectedId).subscribe(
+      (datas) => {
+        this.apiservice.modifyMission(this.id, this.data).subscribe((datas) => {
+          this.refresh();
+        });
+      },
+      (error) => {
+        this.apiservice.modifyMission(this.id, this.data).subscribe((datas) => {
+          this.refresh();
+        });
+      }
+    );
   }
 
   getActionByMissionId(): void {

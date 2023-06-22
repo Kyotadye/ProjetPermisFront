@@ -22,6 +22,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { AllMissionsComponent } from './components/all-missions/all-missions.component';
 import { ModifyMissionComponent } from './components/modify-mission/modify-mission.component';
 import { AddMissionComponent } from './components/add-mission/add-mission.component';
+import { AllInscriptionsComponent } from './components/all-inscriptions/all-inscriptions.component';
+import { AddInscriptionComponent } from './components/add-inscription/add-inscription.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { AddMissionComponent } from './components/add-mission/add-mission.compon
     AllMissionsComponent,
     ModifyMissionComponent,
     AddMissionComponent,
+    AllInscriptionsComponent,
+    AddInscriptionComponent,
   ],
   imports: [
     BrowserModule,

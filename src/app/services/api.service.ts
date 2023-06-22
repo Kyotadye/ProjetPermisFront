@@ -84,4 +84,31 @@ export class ApiService {
   public ajoutMission(data: any): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/mission/ajoutMission`, data);
   }
+
+  public getAllInscriptions(): Observable<any> {
+    return this.http.get<any>(
+      `${this.baseUrl}/inscription/listerMissionInscription`
+    );
+  }
+
+  public deleteInscription(id: number): Observable<any> {
+    return this.http.delete<any>(
+      `${this.baseUrl}/inscription/supprimerInscription/${id}`
+    );
+  }
+
+  public ajoutInscription(id: number): Observable<any> {
+    return this.http.get<any>(
+      `${this.baseUrl}/inscription/ajoutInscription/${id}`
+    );
+  }
+
+  public ajoutActionAMission(
+    idMission: number,
+    idAction: any
+  ): Observable<any> {
+    return this.http.get<any>(
+      `${this.baseUrl}/mission/${idMission}/ajoutAction/${idAction}`
+    );
+  }
 }

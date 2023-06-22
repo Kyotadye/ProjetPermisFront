@@ -9,6 +9,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { AllMissionsComponent } from './components/all-missions/all-missions.component';
 import { ModifyMissionComponent } from './components/modify-mission/modify-mission.component';
 import { AddMissionComponent } from './components/add-mission/add-mission.component';
+import { AllInscriptionsComponent } from './components/all-inscriptions/all-inscriptions.component';
+import { AddInscriptionComponent } from './components/add-inscription/add-inscription.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -21,6 +23,8 @@ const routes: Routes = [
   { path: 'all-missions', component: AllMissionsComponent },
   { path: 'modify-mission/:id', component: ModifyMissionComponent },
   { path: 'add-mission', component: AddMissionComponent },
+  { path: 'all-inscriptions', component: AllInscriptionsComponent },
+  { path: 'add-inscription', component: AddInscriptionComponent },
 ];
 
 @NgModule({

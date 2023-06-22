@@ -1,0 +1,17 @@
+<div class="container-center">
+  <form (ngSubmit)="submitForm()">
+    <div class="container-center">
+      <h1>Ajouter une inscription</h1>
+    </div>
+    <div class="container-center">
+      <select [(ngModel)]="selectedId" name="selectedItem" class="custom-input">
+        <option *ngFor="let item of missions" [value]="item.id">
+          {{ item.wording }}
+        </option>
+      </select>
+    </div>
+    <div class="container-center">
+      <button class="button1" type="submit">Soumettre</button>
+    </div>
+  </form>
+</div>
