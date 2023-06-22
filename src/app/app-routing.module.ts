@@ -6,6 +6,9 @@ import { ModifyActionComponent } from './components/modify-action/modify-action.
 import { AddActionComponent } from './components/add-action/add-action.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AllMissionsComponent } from './components/all-missions/all-missions.component';
+import { ModifyMissionComponent } from './components/modify-mission/modify-mission.component';
+import { AddMissionComponent } from './components/add-mission/add-mission.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -15,6 +18,9 @@ const routes: Routes = [
   { path: 'add-action', component: AddActionComponent },
   { path: 'connection', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'all-missions', component: AllMissionsComponent },
+  { path: 'modify-mission/:id', component: ModifyMissionComponent },
+  { path: 'add-mission', component: AddMissionComponent },
 ];
 
 @NgModule({

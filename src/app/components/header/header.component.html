@@ -38,6 +38,14 @@
       </button>
       <button
         mat-icon-button
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon"
+        (click)="navigateTo('all-missions')"
+      >
+        <mat-icon>free_breakfast</mat-icon>
+      </button>
+      <button
+        mat-icon-button
         class="example-icon"
         aria-label="Example icon-button with share icon"
         (click)="logout()"

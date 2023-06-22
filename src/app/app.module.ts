@@ -19,6 +19,9 @@ import { AddActionComponent } from './components/add-action/add-action.component
 import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptor } from './services/auth-interceptor.service';
 import { RegisterComponent } from './components/register/register.component';
+import { AllMissionsComponent } from './components/all-missions/all-missions.component';
+import { ModifyMissionComponent } from './components/modify-mission/modify-mission.component';
+import { AddMissionComponent } from './components/add-mission/add-mission.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,9 @@ import { RegisterComponent } from './components/register/register.component';
     AddActionComponent,
     LoginComponent,
     RegisterComponent,
+    AllMissionsComponent,
+    ModifyMissionComponent,
+    AddMissionComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,50 @@
+<div class="table-container">
+  <h1>Tableau des missions</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Nom de la mission</th>
+        <th>Actions associées</th>
+        <th>
+          <button
+            mat-icon-button
+            class="example-icon"
+            aria-label="Example icon-button with menu icon"
+            (click)="add()"
+          >
+            <mat-icon>add</mat-icon>
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of missions">
+        <td>{{ item.wording }}</td>
+        <td>
+          <span *ngFor="let action of item.actions">
+            {{ action.wording }}
+            <br />
+          </span>
+        </td>
+        <td>
+          <button
+            mat-icon-button
+            class="example-icon"
+            aria-label="Example icon-button with menu icon"
+            (click)="delete(item.id)"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            class="example-icon"
+            aria-label="Example icon-button with menu icon"
+            (click)="modify(item.id)"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

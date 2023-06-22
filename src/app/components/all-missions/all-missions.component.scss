@@ -1,0 +1,12 @@
+.table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px; /* Espacement entre le titre et le tableau */
+}
+
+th:last-child,
+td:last-child {
+  width: 100px; /* Supprime la ligne pour la dernière colonne */
+}

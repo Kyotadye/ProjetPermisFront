@@ -1,27 +1,27 @@
 import { Component } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 import { Router } from '@angular/router';
-import { ApiService } from '../../services/api.service';
 
 @Component({
-  selector: 'app-all-actions',
-  templateUrl: './all-actions.component.html',
-  styleUrls: ['./all-actions.component.scss'],
+  selector: 'app-all-missions',
+  templateUrl: './all-missions.component.html',
+  styleUrls: ['./all-missions.component.scss'],
 })
-export class AllActionsComponent {
+export class AllMissionsComponent {
   actions: any;
   missions: any;
 
   constructor(private apiService: ApiService, private router: Router) {}
 
   ngOnInit(): void {
-    this.getAllActions();
+    this.getAllMissions();
   }
 
-  getAllActions(): void {
-    this.apiService.getAllActions().subscribe(
+  getAllMissions(): void {
+    this.apiService.getAllMissions().subscribe(
       (datas) => {
         console.log(datas);
-        this.actions = datas; // Faites quelque chose avec les données
+        this.missions = datas; // Faites quelque chose avec les données
       },
       (error) => {
         console.error(error);
@@ -30,10 +30,10 @@ export class AllActionsComponent {
   }
 
   delete(id: number): void {
-    this.apiService.deleteAction(id).subscribe(
+    this.apiService.deleteMission(id).subscribe(
       (datas) => {
         console.log('Suppression réussie');
-        this.apiService.deleteAction(id).subscribe(
+        this.apiService.deleteMission(id).subscribe(
           (datas) => {
             console.log('Suppression réussie');
             this.refreshPage();
@@ -51,14 +51,14 @@ export class AllActionsComponent {
   }
 
   refreshPage() {
-    this.getAllActions();
+    this.getAllMissions();
   }
 
   modify(id: number) {
-    this.router.navigate(['/modify-action', id]);
+    this.router.navigate(['/modify-mission', id]);
   }
 
   add() {
-    this.router.navigate(['/add-action']);
+    this.router.navigate(['/add-mission']);
   }
 }
