@@ -11,6 +11,7 @@ import { ModifyMissionComponent } from './components/modify-mission/modify-missi
 import { AddMissionComponent } from './components/add-mission/add-mission.component';
 import { AllInscriptionsComponent } from './components/all-inscriptions/all-inscriptions.component';
 import { AddInscriptionComponent } from './components/add-inscription/add-inscription.component';
+import { InfoUserComponent } from './components/info-user/info-user.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'add-mission', component: AddMissionComponent },
   { path: 'all-inscriptions', component: AllInscriptionsComponent },
   { path: 'add-inscription', component: AddInscriptionComponent },
+  { path: 'info-user/:id', component: InfoUserComponent },
 ];
 
 @NgModule({

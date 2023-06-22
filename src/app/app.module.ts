@@ -24,6 +24,7 @@ import { ModifyMissionComponent } from './components/modify-mission/modify-missi
 import { AddMissionComponent } from './components/add-mission/add-mission.component';
 import { AllInscriptionsComponent } from './components/all-inscriptions/all-inscriptions.component';
 import { AddInscriptionComponent } from './components/add-inscription/add-inscription.component';
+import { InfoUserComponent } from './components/info-user/info-user.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { AddInscriptionComponent } from './components/add-inscription/add-inscri
     AddMissionComponent,
     AllInscriptionsComponent,
     AddInscriptionComponent,
+    InfoUserComponent,
   ],
   imports: [
     BrowserModule,

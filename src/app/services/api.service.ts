@@ -111,4 +111,17 @@ export class ApiService {
       `${this.baseUrl}/mission/${idMission}/ajoutAction/${idAction}`
     );
   }
+
+  public getUserById(id: number): Observable<any> {
+    return this.http.get<any>(
+      `${this.baseUrl}/utilisateur/getUtilisateur/${id}`
+    );
+  }
+
+  public modifyPassword(id: number, data: any): Observable<any> {
+    return this.http.put<any>(
+      `${this.baseUrl}/utilisateur/modifierMdpUtilisateur/${id}`,
+      data
+    );
+  }
 }

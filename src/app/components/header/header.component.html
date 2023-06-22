@@ -32,6 +32,14 @@
         mat-icon-button
         class="example-icon favorite-icon"
         aria-label="Example icon-button with heart icon"
+        (click)="navigateTo('info-user/' + userid)"
+      >
+        <mat-icon>portrait</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon"
         (click)="navigateTo('all-actions')"
       >
         <mat-icon>flight_takeoff</mat-icon>

@@ -1,0 +1,53 @@
+<div class="container">
+  <ng-container *ngIf="data != undefined">
+    <h1>Change le mot de passe l'utilisateur : {{ data.nomUtil }}</h1>
+  </ng-container>
+  <ng-container *ngIf="data != undefined">
+    <div class="centered">
+      <input
+        type="password"
+        [(ngModel)]="motpassenew"
+        class="custom-input"
+        placeholder="Nouveau mot de passe"
+        required
+      />
+    </div>
+    <div class="centered">
+      <input
+        type="password"
+        [(ngModel)]="motpassenewConfirmation"
+        class="custom-input"
+        placeholder="Confirmez le mot de passe"
+        required
+      />
+    </div>
+  </ng-container>
+
+  <div class="centered">
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+      (click)="refresh()"
+    >
+      <mat-icon>cancel</mat-icon>
+    </button>
+    <ng-container *ngIf="data != undefined">
+      <ng-container *ngIf="data.wording != ''">
+        <button
+          mat-icon-button
+          class="example-icon"
+          aria-label="Example icon-button with menu icon"
+          (click)="modify()"
+        >
+          <mat-icon>save</mat-icon>
+        </button>
+      </ng-container>
+    </ng-container>
+  </div>
+  <div class="centered">
+    <div *ngIf="showErrorMessage" class="error-message">
+      Les mots de passes ne correspondent pas
+    </div>
+  </div>
+</div>

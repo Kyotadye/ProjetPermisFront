@@ -14,7 +14,7 @@ export class AuthService {
     return this.http.post<any>(`${this.baseUrl}/login`, data).pipe(
       tap((response) => {
         localStorage.setItem('token', response.token);
-        localStorage.setItem('user', JSON.stringify(response.user));
+        localStorage.setItem('id', JSON.stringify(response.id));
       })
     );
   }
@@ -23,7 +23,7 @@ export class AuthService {
     return this.http.post<any>(`${this.baseUrl}/register`, data).pipe(
       tap((response) => {
         localStorage.setItem('token', response.token);
-        localStorage.setItem('user', JSON.stringify(response.user));
+        localStorage.setItem('id', JSON.stringify(response.id));
       })
     );
   }

@@ -9,12 +9,16 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
   token: string = localStorage.getItem('token') || '';
   logged: boolean = this.token.length > 0;
-  constructor(private router: Router) {}
   isNavbarActive: boolean = false;
+  userid: string = '';
+
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.token = localStorage.getItem('token') || '';
     this.logged = this.token.length > 0;
+    this.userid = localStorage.getItem('id') || '';
+    console.log(this.userid);
   }
 
   toggleNavbar(): void {
