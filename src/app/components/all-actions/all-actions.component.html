@@ -1,0 +1,59 @@
+<div class="table-container">
+  <h1>Tableau des actions</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Nom de l'action</th>
+        <th>Missions associées</th>
+        <th>Dépend de l'action</th>
+        <th>Score minimum</th>
+        <th>
+          <button
+            mat-icon-button
+            class="example-icon"
+            aria-label="Example icon-button with menu icon"
+            (click)="add()"
+          >
+            <mat-icon>add</mat-icon>
+          </button>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of actions">
+        <td>{{ item.wording }}</td>
+        <td>
+          <span *ngFor="let mission of item.missions">
+            {{ mission.wording }}
+            <br />
+          </span>
+        </td>
+        <td>
+          <span *ngIf="item.fkEntityActionWording; else slash">
+            {{ item.fkEntityActionWording }}
+          </span>
+          <ng-template #slash>/</ng-template>
+        </td>
+        <td>{{ item.scoreMinimum }}</td>
+        <td>
+          <button
+            mat-icon-button
+            class="example-icon"
+            aria-label="Example icon-button with menu icon"
+            (click)="delete(item.id)"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            class="example-icon"
+            aria-label="Example icon-button with menu icon"
+            (click)="modify(item.id)"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

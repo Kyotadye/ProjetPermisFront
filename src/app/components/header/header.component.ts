@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,9 +7,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+  token: string = localStorage.getItem('token') || '';
+  logged: boolean = this.token.length > 0;
   constructor(private router: Router) {}
-
   isNavbarActive: boolean = false;
+
+  ngOnInit() {
+    this.token = localStorage.getItem('token') || '';
+    this.logged = this.token.length > 0;
+  }
 
   toggleNavbar(): void {
     this.isNavbarActive = !this.isNavbarActive;
@@ -17,5 +23,11 @@ export class HeaderComponent {
 
   navigateTo(page: string): void {
     this.router.navigate([`/${page}`]);
+  }
+
+  logout(): void {
+    localStorage.removeItem('token');
+    this.router.navigate([`/`]);
+    this.logged = false;
   }
 }

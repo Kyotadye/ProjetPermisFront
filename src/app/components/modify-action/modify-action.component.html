@@ -1,0 +1,53 @@
+<div class="container">
+  <h1>Modifier une action</h1>
+  <ng-container *ngIf="data != undefined">
+    <ng-container *ngIf="data.wording != ''">
+      <div class="centered">
+        <input type="text" [(ngModel)]="data.wording" class="custom-input" />
+      </div>
+      <div class="centered">
+        <table>
+          <ng-container *ngFor="let mission of missions">
+            <tr>
+              <td *ngIf="mission != undefined">{{ mission.wording }}</td>
+              <td>
+                <button
+                  mat-icon-button
+                  class="example-icon"
+                  aria-label="Example icon-button with menu icon"
+                  (click)="delete(mission.id)"
+                >
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </td>
+            </tr>
+          </ng-container>
+        </table>
+      </div>
+    </ng-container>
+  </ng-container>
+
+  <div class="centered">
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+      (click)="refresh()"
+    >
+      <mat-icon>cancel</mat-icon>
+    </button>
+    <ng-container *ngIf="data != undefined">
+      <ng-container *ngIf="data.wording != ''">
+        <button
+          mat-icon-button
+          class="example-icon"
+          aria-label="Example icon-button with menu icon"
+          (click)="modify()"
+        >
+          <mat-icon>save</mat-icon>
+        </button>
+      </ng-container>
+    </ng-container>
+  </div>
+  <div class="centered"></div>
+</div>
