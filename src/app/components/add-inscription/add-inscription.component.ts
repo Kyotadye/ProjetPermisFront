@@ -38,6 +38,7 @@ export class AddInscriptionComponent {
       },
       (error) => {
         console.error(error);
+        this.router.navigate(['/all-inscriptions']);
       }
     );
     // Autres opérations de soumission du formulaire...

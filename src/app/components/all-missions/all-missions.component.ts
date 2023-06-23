@@ -39,7 +39,6 @@ export class AllMissionsComponent {
             this.refreshPage();
           },
           (error) => {
-            console.error(error);
             this.refreshPage();
           }
         );

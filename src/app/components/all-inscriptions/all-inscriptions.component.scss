@@ -10,3 +10,60 @@ th:last-child,
 td:last-child {
   width: 100px; /* Supprime la ligne pour la dernière colonne */
 }
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+}
+
+input[type="checkbox"] {
+  -border-radius: 4px;
+  height: 15px;
+  width: 15px;
+  background: var(--secondary-color);
+  border: 1px solid #ccc;
+}
+
+input[type="checkbox"] {
+  background: var(--secondary-color);
+}
+
+input[type="checkbox"] {
+  position: relative;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 2px;
+  color: var(--primary-color);
+  opacity: 0;
+}
+
+input[type="checkbox"]::after {
+  content: "x";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 13px;
+  color: var(--primary-color);
+  opacity: 0;
+}
+
+input[type="checkbox"]:checked::after {
+  opacity: 1;
+}
+
+input[type="checkbox"]:checked::after {
+  font-weight: bold;
+}
+
+input[type="checkbox"]:checked {
+  background: var(--third-color);
+}

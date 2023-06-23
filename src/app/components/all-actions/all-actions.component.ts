@@ -39,7 +39,6 @@ export class AllActionsComponent {
             this.refreshPage();
           },
           (error) => {
-            console.error(error);
             this.refreshPage();
           }
         );

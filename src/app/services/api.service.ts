@@ -124,4 +124,43 @@ export class ApiService {
       data
     );
   }
+
+  public getListActionByInscription(id: number): Observable<any> {
+    return this.http.get<any>(
+      `${this.baseUrl}/inscription/listerActionInscription/${id}`
+    );
+  }
+
+  public getScoreActionInscription(
+    idInscription: number,
+    idAction: number
+  ): Observable<any> {
+    return this.http.get<any>(
+      `${this.baseUrl}/inscription/getScore/${idInscription}/${idAction}`
+    );
+  }
+
+  public doAction(idInscription: number, idAction: number): Observable<any> {
+    return this.http.get<any>(
+      `${this.baseUrl}/inscription/faireAction/${idInscription}/${idAction}`
+    );
+  }
+
+  public cancelAction(
+    idInscription: number,
+    idAction: number
+  ): Observable<any> {
+    return this.http.get<any>(
+      `${this.baseUrl}/inscription/annulerAction/${idInscription}/${idAction}`
+    );
+  }
+
+  public checkActionDone(
+    idInscription: number,
+    idAction: number
+  ): Observable<any> {
+    return this.http.get<any>(
+      `${this.baseUrl}/inscription/isDone/${idInscription}/${idAction}`
+    );
+  }
 }

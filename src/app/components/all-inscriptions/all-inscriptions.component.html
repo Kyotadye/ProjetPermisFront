@@ -5,6 +5,9 @@
       <tr>
         <th>Nom de la mission</th>
         <th>Date de l'inscritpion</th>
+        <th>Liste des actions</th>
+        <th>Score des actions</th>
+        <th>Effectuer action</th>
         <th>
           <button
             mat-icon-button
@@ -21,6 +24,42 @@
       <tr *ngFor="let item of inscriptions">
         <td>{{ item.fkMissionWording }}</td>
         <td>{{ item.date }}</td>
+        <td>
+          <span *ngFor="let action of actionsByInscription[item.id]">
+            <div style="padding-top: 2px">
+              {{ action.wording }}
+            </div>
+            <br />
+          </span>
+        </td>
+        <td>
+          <span *ngFor="let action of actionsByInscription[item.id]">
+            <ng-container *ngIf="action != null">
+              <ng-container *ngIf="scoreActionsByInscription[item.id] != null">
+                <div style="padding-top: 2px">
+                  {{ scoreActionsByInscription[item.id][action.id] }}
+                </div>
+              </ng-container>
+            </ng-container>
+            <br />
+          </span>
+        </td>
+        <td>
+          <span *ngFor="let action of actionsByInscription[item.id]">
+            <ng-container *ngIf="action != null">
+              <ng-container *ngIf="scoreActionsByInscription[item.id] != null">
+                <div style="padding-bottom: 0">
+                  <input
+                    type="checkbox"
+                    [checked]="booleanActionsByInscription[item.id][action.id]"
+                    (change)="onCheckboxChange(item.id, action.id)"
+                  />
+                </div>
+              </ng-container>
+            </ng-container>
+            <br />
+          </span>
+        </td>
         <td>
           <button
             mat-icon-button
